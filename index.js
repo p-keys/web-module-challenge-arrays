@@ -46,10 +46,11 @@ Use the copy function below to do the following:
 */
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(a){
+  return a; 
 }
 
+copy(originalFlavors); 
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -63,11 +64,16 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(a){
+  if(a.length === 31)
+  {
+    return true; 
+  }
+  else
+  {
+    return false; 
+  }
  }
-
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -82,11 +88,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(a, str){
+  a.unshift(str); 
+  return(a); 
  }
 
-
+addFlavor(originalFlavors, "Rainbow Sherbert"); 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -100,8 +107,9 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(a){
+ a.pop();
+ return(a); 
 }
 
 
@@ -118,8 +126,8 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(a, num){
+  return(a[num]); 
 }
 
 
@@ -138,10 +146,19 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(a, str){
+  for(let i = 0; i < a.length; i++)
+  {
+    console.log(a[i]); 
+    if(a[i] === str)
+    {
+      a.splice(i, 1); 
+    }
+  }
+  return(a); 
 }
 
+console.log(removeFlavorByName(originalFlavors, "Chocolate")); 
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -163,11 +180,19 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(a, str){
+  let array2 = []; 
+  for(let i = 0; i < a.length; i++)
+  {
+    if(a[i].includes(str) === true)
+    {
+      array2.push(a[i]); 
+    }
+  }
+  return(array2); 
 }
 
-
+console.log(filterByWord(originalFlavors, "Chocolate")); 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
